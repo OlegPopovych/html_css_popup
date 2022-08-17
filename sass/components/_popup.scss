@@ -1,0 +1,122 @@
+.popup {
+	padding: 1rem 1rem;
+	font-size: $default-font-size;
+	display: none;
+	position: absolute;
+	max-height: 30rem;
+	left: -10rem;
+	top: 8.5rem;
+	overflow-y: auto;
+	overflow-x: auto;
+	z-index: 1;
+	background-color: $color-primary;
+	border-radius: 0.8rem;
+	scrollbar-gutter: stable;
+	transition: scrollbar-color 0.3s ease-out;
+	animation: moveInBottom 0.4s ease-out .0s;
+	transition: all .4s;
+
+
+	&__menu,
+	&__sub {
+		grid-template: 9rem / repeat(3, 9rem);
+		grid-auto-flow: row;
+		grid-auto-rows: 9rem;
+		gap: 1rem;
+		list-style-type: none;
+		display: grid;
+		justify-items: center;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $color-grey-darck;
+		width: 9rem;
+		height: 9rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: all .4s;
+
+		&:active {
+			box-shadow: 0 0 10px $color-primary-light;
+			border-radius: 1rem;
+		}
+
+		&:focus {
+			outline: 0.2rem solid $color-primary-light;
+			border-radius: 1rem;
+		}
+
+		&:hover {
+			box-shadow: 0 0 9px $color-primary-light;
+			border-radius: 1rem;
+			transform: scale(1.1);
+		}
+	}
+
+	&:hover &__link:not(:hover) {
+		transform: scale(0.95);
+	}
+
+	&__sub {
+		display: none;
+
+		&--toggle {
+			display: flex;
+			//align-items: center;
+			justify-content: center;
+			align-items: center;
+			height: 4rem;
+			background-color: $color-grai-light-1;
+			color: $color-grey-darck;
+			border-radius: 0.3rem;
+			width: 13rem;
+			margin: 1rem auto;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			&:active {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+}
+
+
+
+.check__input:checked~.popup {
+	display: block;
+}
+
+.check__input:checked+label>a {
+	transform: rotate(90deg);
+}
+
+.check__input:checked~.popup__sub {
+	display: grid;
+}
+
+.check__input {
+	-webkit-appearance: none;
+	position: absolute;
+}
+
+.popup::-webkit-scrollbar {
+	width: 0.6rem;
+}
+
+.popup::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.popup::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.548);
+	border-radius: 0.5rem;
+}

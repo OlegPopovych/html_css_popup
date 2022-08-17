@@ -1,0 +1,16 @@
+.footer {
+	animation: moveInRight 0.4s ease-out .75s;
+	height: 9rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: $color-primary-light;
+	border-radius: 2rem;
+
+	&__link {
+		text-decoration: none;
+		color: $color-grey-darck;
+		font-size: 2rem;
+	}
+}

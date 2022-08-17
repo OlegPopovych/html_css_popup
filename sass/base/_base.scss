@@ -1,0 +1,35 @@
+html {
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+button,
+table {
+	box-sizing: border-box;
+}
+
+table {
+	border-spacing: 0.2rem;
+	display: inline-block;
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+label {
+
+	cursor: pointer;
+}
